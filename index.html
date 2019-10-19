@@ -1,0 +1,631 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Care Cool - A/C Sales & Service</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <metadata>AC service, Washing machine service, Oven service, Fridge service, Pala, Kottayam, AC service in Pala -->
+  <!-- </metadata> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    #headsec {
+      position: fixed;
+      width: 100%;
+      opacity: 0.8;
+      overflow: hidden;
+      transition: 1s;
+      top: 0;
+    }
+
+    .title {
+      position: fixed;
+      text-align: center;
+      color: #000;
+      font-family: 'Righteous';
+      font-weight: normal;
+      top: 20%;
+      left: 30%;
+      transition: 1s;
+    }
+
+    .th {
+      position: fixed;
+      text-align: center;
+      color: #000;
+      font-family: 'Righteous';
+      font-weight: normal;
+      top: 20%;
+      left: 30%;
+      transition: 1s;
+    }
+
+
+    .tit {
+      transform: scale(0.6);
+      -webkit-animation: mymove 1.2s;
+      animation: mymove 1.2s;
+      animation-iteration-count: 1;
+    }
+
+    @-webkit-keyframes mymove {
+      to {
+        left: 2%;
+        top: 0%;
+      }
+    }
+
+    @keyframes mymove {
+      to {
+        left: 2%;
+        top: 0%;
+      }
+    }
+
+    .header {
+      height: 15%;
+      position: fixed;
+      z-index: 999;
+      background-color: rgb(184, 62, 62);
+      transition: 1s;
+      border-bottom-right-radius: 50px;
+    }
+
+    .nav {
+      float: right;
+      margin: 10px;
+      color: #fff;
+      font-size: 22px;
+
+    }
+
+    #body {
+      padding: 10px;
+    }
+
+    .summary {
+      font-size: 18px;
+      line-height: 2em;
+      word-spacing: .5em;
+    }
+
+    .block {
+      margin-bottom: 30px;
+      white-space: pre-line;
+      z-index: 89;
+    }
+
+    h3 {
+      font-size: 18px;
+      color: brown;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 700px) {
+      .spare-blk {
+        display: none;
+      }
+    }
+
+    @media (min-width: 700px) {
+      .title {
+        left: 40%;
+      }
+
+      .header {
+        height: 25%;
+      }
+
+      .th {
+        left: 40%;
+      }
+
+      #body {
+        padding: 50px;
+        padding-right: 100px;
+        padding-left: 100px;
+      }
+
+      h1 {
+        font-size: 65px;
+      }
+
+      h2 {
+        font-size: 35px;
+      }
+    }
+
+    .itemssec {
+      background-color: rgb(146, 93, 27);
+      border-radius: 20px;
+    }
+
+    #itemlabel {
+      /* font-size: 11px; */
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      /* word-spacing: 0.2rem; */
+      line-height: 2em;
+    }
+
+    .desc {
+      font-size: 16px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      padding: 12px;
+      font-style: italic;
+    }
+
+
+    header {
+      position: relative;
+      background-color: black;
+      height: 100%;
+      min-height: 50rem;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    header video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      opacity: 0.5;
+      z-index: 1;
+    }
+
+    @media (pointer: coarse) and (hover: none) {
+      header {
+        background: url('images/Bg-vid.mp4') black no-repeat center center scroll;
+      }
+
+      header video {
+        display: none;
+      }
+    }
+
+    #text {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    #aykara4 {
+      float: right;
+      width: 100%;
+      background-color: rgb(102, 102, 204);
+      border-radius: 2px;
+      color: #fff;
+      text-align: center;
+      font-family: monospace;
+      font-size: 18px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div id="headsec">
+      <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="images/Bg-vid.mp4" type="video/mp4">
+        </video>
+    </div>
+    </header>
+  </div>
+
+  <div class="header section">
+    <div class="title">
+      <h1>Cool Care</h1>
+      <h2>A/C Sale & Service</h2>
+    </div>
+    <div class="th">
+      <h1>Cool Care</h1>
+      <h2>A/C Sale & Service</h2>
+    </div>
+
+    <a href="#contactus">
+      <div class="nav">
+        Contact Us
+      </div>
+    </a>
+    <div class="nav">
+      <a href="tel://+917034019221">
+        <p style="color: #fff;" id="text">☎ +91 - 7034019221</p>
+      </a>
+      <a href="tel://+918606842304">
+        <p style="color: #fff;" id="text">☎ +91 - 8606842304</p>
+      </a>
+    </div>
+
+  </div>
+
+  <div style="height: 40vw;"></div>
+
+  <div id="body">
+
+    <div class="ui segment">
+      <div class="ui segment">
+        <img class="ui right floated medium image" src="images/team1.png">
+        <p class="summary">
+          Since 2014, we at Cool Care A/C we provide sale, repairing and services for all types of Air Conditioners.
+          Our provide Sale, Installation and Service of Ductable A/C.
+          We are located at Pala, on Vaikom Road and our services extend throught Kottayam district, Kerala.
+        </p>
+        <img class="ui left floated medium image" src="images/team2.jpg">
+        <p class="summary">
+          We are your one-stop shop for all Air Conditioning, Refrigeration and Washing Machine Services.
+          We provide all types of spares and services realted to them. With experienced team, we are all set to
+          provide you with all your 'cooling' needs.
+        </p>
+        <p class="summary">
+          Cool Care provides services for reputed brands like LG, Godrej, Voltas, BlueStar, Llyod etc.
+          We undertake services of other equipments like Oven, Water-Cooler, Refrigerators, Washing Machines etc.
+          <img class="ui right floated tiny image" src="images/b1.PNG">
+          <img class="ui right floated tiny image" src="images/b3.PNG">
+          <img class="ui right floated tiny image" src="images/b2.PNG">
+        </p>
+        <p class="summary">
+          We provide on-site service.
+          Contact Us for any issues related with your Cooling equipments and our technician will be available.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <h3>Products Available</h3>
+      <div class="ui three doubling cards itemssec">
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/compressor.PNG">
+            <p id="itemlabel" class="ui black ribbon label">TECUMSEH, WHIRLPOOL Compressors<br>for all applications
+            </p>
+          </div>
+          <p class="desc">FHP / Reciprocating / ROTARY Compressor<br>Condensing Units for COLD ROOMS</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/floron.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Floron Refrigerants</p>
+          </div>
+          <p class="desc">R134A (340g & 450g, R22(450g) SUPERTRON nBUTANE 225g</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/floron2.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Floron Refrigerants</p>
+          </div>
+          <p class="desc">R134A R22, R404A, R407C, R410A, R32</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/heavy-stand.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Heavy Duty ODU Stands (3.5Kg & 5Kg)</p>
+          </div>
+          <p class="desc">20" & 24" Lengths Powder Coated for durability</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/copper-tube.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Imported Copper Tubes</p>
+          </div>
+          <p class="desc">3/16" to 3/4" OD</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/copper-condenser.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Curved Copper Condensers</p>
+          </div>
+          <p class="desc">Pressure Tested, Corrugted 14fpi<br>3/8" & 1/4" tube</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/nitrile-insulation.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Superlon Nitrile Insulation Tube & Sheets</p>
+          </div>
+          <p class="desc">Made in Malaysia, Superior Quality<br>Available in all Diameter & Thickness</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/danfoss-controls.png">
+            <p id="itemlabel" class="ui black ribbon label">Danfoss Controls</p>
+          </div>
+          <p class="desc">HP, LP, Driers, Expansion valves etc...</p>
+        </div>
+        <div class="card">
+          <div class="image ui-fluid">
+            <img src="images/thermo-stat.PNG">
+            <p id="itemlabel" class="ui black ribbon label">Annapurna Thermo Stats</p>
+          </div>
+          <p class="desc">For Fridges, Frezers, Water Cooler, Bottle Cooler etc...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui inverted segment">
+      <p class="summary">
+        We provide Sale and Service of following brands.
+      </p>
+      <div class="ui five stackable cards">
+        <div class="card">
+          <div class="ui tiny image centered">
+            <img src="images/voltas-logo.jpg">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image ui tiny centered">
+            <img src="images/jodrej.gif">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image ui tiny centered">
+            <img src="images/llyod.jpg">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image ui tiny centered">
+            <img src="images/lg.png">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image ui tiny centered">
+            <img src="images/blustar.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block spare-blk">
+      <h3>Available Spare parts of all types of A/C, Washing Machines and Refrigerators.</h3>
+      <div class="ui six stackable cards itemssec">
+        <div class="card">
+          <div class="image">
+            <img src="images/a1.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a2.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a3.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a4.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a5.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a7.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a8.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a9.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a10.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a11.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a20.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a6.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a13.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a14.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a15.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a16.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a17.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a18.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a19.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a12.PNG">
+          </div>
+        </div>
+        <div class="card">
+          <div class="image">
+            <img src="images/a21.PNG">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Body div close -->
+  </div>
+
+  <div class="ui placeholder segment" id="contactus">
+    <h2>Contact Us</h2>
+    <div class="ui three column stackable center aligned grid">
+      <div class="middle aligned row">
+        <div class="column">
+          <div class="ui secondary segment">
+            <h4 style="font-size: 18px; text-decoration: underline;">Address</h4>
+            <p id="text">Care Cool, A/C Sale & Service</p>
+            <p id="text">Aykara Building III </p>
+            <p id="text">Vaikom Road, Pala</p>
+            <p id="text">Kottayam - 686575</p>
+          </div>
+        </div>
+
+        <div class="column">
+
+          <!-- Map -->
+          <div class="mapouter">
+            <div class="gmap_canvas"><iframe width="417" height="192" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=cool%20care%20pala&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                href="https://www.utilitysavingexpert.com">utilitysavingexpert.com</a></div>
+            <style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                height: 192px;
+                width: 417px;
+              }
+
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 192px;
+                width: 417px;
+              }
+            </style>
+          </div>
+
+          <!-- Map End -->
+        </div>
+
+        <div class="column">
+          <div class="ui secondary segment">
+            <a href="tel://+917034019221">
+              <p id="text">☎ +91 - 7034019221</p>
+            </a>
+            <a href="tel://+918606842304">
+              <p id="text">☎ +91 - 8606842304</p>
+            </a>
+            <a href="https://wa.me/917034019221">
+              <div class="ui labeled button">
+                <div class="ui green button">
+                  <i class="mail icon"></i>Message on Whatsapp
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <a href="https://aykara4.com">
+      <div id="aykara4">
+        Powered By Aykara4
+      </div>
+    </a>
+  </div>
+
+  <!-- Container div close -->
+  </div>
+
+  <script>
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop >= 15 || document.documentElement.scrollTop >= 15) {
+        document.getElementById("headsec").style.opacity = .2;
+        $(".title").show();
+        $(".title").addClass("tit");
+        $(".header").css({ "width": "100%", })
+        $(".th").hide();
+        setTimeout(function () {
+          $(".title").css({ "top": "0%", "left": "2%", "transform": "scale(0.6)" });
+        }, 1200);
+
+      } else {
+        document.getElementById("headsec").style.opacity = .8;
+        $(".th").show();
+        $(".title").hide();
+        $(".title").removeClass("tit");
+        $(".header").css({ "width": "0%", });
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
