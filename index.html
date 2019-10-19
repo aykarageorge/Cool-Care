@@ -77,6 +77,10 @@
         display: none;
       }
 
+      .blank_space {
+        height: 100vw;
+      }
+
       .title {
         position: fixed;
         text-align: center;
@@ -88,9 +92,6 @@
         transition: 1s;
       }
 
-      header {
-        background: url('images/team1.png') black no-repeat center center scroll;
-      }
     }
 
     @media (min-width: 700px) {
@@ -103,6 +104,10 @@
         top: 10%;
         left: 10%;
         transition: 1s;
+      }
+
+      .blank_space {
+        height: 40vw;
       }
 
       .tit {
@@ -280,7 +285,7 @@
     </a>
   </div>
 
-  <div style="height: 40vw;"></div>
+  <div class="blank_space"></div>
 
   <div id="body">
 
@@ -608,7 +613,6 @@
     if ($(window).width() > 700)
       window.onscroll = function () { scrollFunction() };
     else {
-      document.getElementById("headsec").style.opacity = .2;
       $(".title").show();
       $(".title").addClass("tit");
       $(".header").css({ "width": "100%", })
@@ -616,6 +620,12 @@
       setTimeout(function () {
         $(".title").css({ "top": "0%", "left": "2%", "transform": "scale(0.6)" });
       }, 1200);
+      window.onscroll = function () {
+        if (document.body.scrollTop >= 15 || document.documentElement.scrollTop >= 15)
+          document.getElementById("headsec").style.opacity = .2;
+        else
+          document.getElementById("headsec").style.opacity = .9;
+      }
     }
     function scrollFunction() {
       if (document.body.scrollTop >= 15 || document.documentElement.scrollTop >= 15) {
