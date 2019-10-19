@@ -15,6 +15,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 
   <style>
     html {
@@ -72,13 +75,29 @@
       font-weight: bold;
     }
 
+    .slider {
+      width: inherit;
+      height: 344px;
+      overflow: scroll;
+    }
+
+    .slider ul {
+      width: 10000px;
+      list-style: none;
+      margin-left: 0px;
+    }
+
+    .slider li {
+      float: left;
+    }
+
     @media screen and (max-width: 700px) {
       .spare-blk {
         display: none;
       }
 
       .blank_space {
-        height: 130vw;
+        height: 100vw;
       }
 
       .title {
@@ -119,7 +138,7 @@
       .title {
         position: fixed;
         text-align: center;
-        color: #000;
+        color: #fff;
         font-family: 'Righteous';
         font-weight: normal;
         top: 10%;
@@ -286,13 +305,47 @@
 
     <div class="ui segment">
       <div class="ui segment">
-        <img class="ui right floated medium image" src="images/team1.png">
         <p class="summary">
           Since 2014, we at Cool Care A/C provide sale, repairing and services for all types of Air Conditioners.
           We provide Sale, Installation and Service of Ductable A/C.
           We are located at Pala, on Vaikom Road and our services extend throught Kottayam district, Kerala.
         </p>
-        <img class="ui left floated medium image" src="images/team2.jpg">
+        <div id="myCarousel" class="carousel slide floated ui left large image" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="container">
+            <div class="carousel-inner">
+              <div class="item active">
+                <img class="ui left floated large image" src="images/team1.png" alt="Los Angeles">
+              </div>
+
+              <div class="item">
+                <img class="ui left floated large image" src="images/team2.jpg" alt="Chicago">
+              </div>
+
+              <div class="item">
+                <img class="ui left floated large image" src="images/team3.jpg" alt="Chicago">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
         <p class="summary">
           We are your one-stop shop for all Air Conditioning, Refrigeration and Washing Machine Services.
           We provide all types of spares and services realted to them. With experienced team, we are all set to
