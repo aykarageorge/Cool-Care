@@ -32,35 +32,13 @@
       top: 0;
     }
 
-    .title {
-      position: fixed;
-      text-align: center;
-      color: #000;
-      font-family: 'Righteous';
-      font-weight: normal;
-      top: 10%;
-      left: 30%;
-      transition: 1s;
-    }
-
-    .th {
-      position: fixed;
-      text-align: center;
-      color: #000;
-      font-family: 'Righteous';
-      font-weight: normal;
-      top: 10%;
-      left: 30%;
-      transition: 1s;
-    }
-
     .header {
       height: 15%;
       position: fixed;
       z-index: 999;
       background-color: rgb(184, 62, 62);
-      transition: 1s;
       border-bottom-right-radius: 50px;
+      transition: 1s;
     }
 
     .nav {
@@ -97,14 +75,47 @@
       .spare-blk {
         display: none;
       }
+
+      .title {
+        position: fixed;
+        text-align: center;
+        color: #000;
+        font-family: 'Righteous';
+        font-weight: normal;
+        top: 10%;
+        left: 10%;
+        transition: 1s;
+      }
     }
 
     @media (min-width: 700px) {
+      .th {
+        position: fixed;
+        text-align: center;
+        color: #000;
+        font-family: 'Righteous';
+        font-weight: normal;
+        top: 10%;
+        left: 10%;
+        transition: 1s;
+      }
+
       .tit {
         transform: scale(0.6);
         -webkit-animation: mymove 1.2s;
         animation: mymove 1.2s;
         animation-iteration-count: 1;
+      }
+
+      .title {
+        position: fixed;
+        text-align: center;
+        color: #000;
+        font-family: 'Righteous';
+        font-weight: normal;
+        top: 10%;
+        left: 10%;
+        transition: 1s;
       }
 
       @-webkit-keyframes mymove {
@@ -122,15 +133,15 @@
       }
 
       .title {
-        left: 40%;
+        left: 10%;
       }
 
       .header {
-        height: 25%;
+        height: 20%;
       }
 
       .th {
-        left: 40%;
+        left: 10%;
       }
 
       #body {
@@ -251,7 +262,7 @@
   </div>
 
   <div class="header section">
-    <div class="title">
+    <div class="title spare-blk">
       <h1>Cool Care</h1>
       <h2>A/C Sale & Service</h2>
     </div>
@@ -265,15 +276,6 @@
         Contact Us
       </div>
     </a>
-    <div class="nav">
-      <a href="tel://+917034019221">
-        <p style="color: #fff;" id="text">☎ +91 - 7034019221</p>
-      </a>
-      <a href="tel://+918606842304">
-        <p style="color: #fff;" id="text">☎ +91 - 8606842304</p>
-      </a>
-    </div>
-
   </div>
 
   <div style="height: 40vw;"></div>
@@ -600,7 +602,18 @@
 
   <script>
     // When the user scrolls down 50px from the top of the document, resize the header's font size
-    window.onscroll = function () { scrollFunction() };
+    if ($(window).width() > 700)
+      window.onscroll = function () { scrollFunction() };
+    else {
+      document.getElementById("headsec").style.opacity = .2;
+      $(".title").show();
+      $(".title").addClass("tit");
+      $(".header").css({ "width": "100%", })
+      $(".th").hide();
+      setTimeout(function () {
+        $(".title").css({ "top": "0%", "left": "2%", "transform": "scale(0.6)" });
+      }, 1200);
+    }
 
     function scrollFunction() {
       if (document.body.scrollTop >= 15 || document.documentElement.scrollTop >= 15) {
