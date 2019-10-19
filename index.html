@@ -87,6 +87,7 @@
         left: 10%;
         transition: 1s;
       }
+
       header {
         background: url('images/team1.png') black no-repeat center center scroll;
       }
@@ -191,7 +192,7 @@
       overflow: hidden;
     }
 
-    header video {
+    header .video {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -224,10 +225,10 @@
 
     @media (pointer: coarse) and (hover: none) {
       header {
-        background: url('images/Bg-vid.mp4') black no-repeat center center scroll;
+        background: url('images/bg.gif') black no-repeat center center scroll;
       }
 
-      header video {
+      header .video {
         display: none;
       }
     }
@@ -256,11 +257,8 @@
 
     <div id="headsec">
       <header>
-        <div class="overlay"></div>
-        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-          <source src="images/Bg-vid.mp4" type="video/mp4">
-          <img src="images/team2.png" alt="Your browser does not support video.">
-        </video>
+        <div class="overlay">
+          <img class="video" src="images/bg.gif" alt="Your browser does not support video."></div>
     </div>
     </header>
   </div>
@@ -290,8 +288,8 @@
       <div class="ui segment">
         <img class="ui right floated medium image" src="images/team1.png">
         <p class="summary">
-          Since 2014, we at Cool Care A/C we provide sale, repairing and services for all types of Air Conditioners.
-          Our provide Sale, Installation and Service of Ductable A/C.
+          Since 2014, we at Cool Care A/C provide sale, repairing and services for all types of Air Conditioners.
+          We provide Sale, Installation and Service of Ductable A/C.
           We are located at Pala, on Vaikom Road and our services extend throught Kottayam district, Kerala.
         </p>
         <img class="ui left floated medium image" src="images/team2.jpg">
